@@ -1,0 +1,9 @@
+
+{
+  "name": "api-front",
+  "version": "0.0.1",
+  "dependencies": {
+    "restler": "0.2.3",
+	"express": "2.5.2"
+  }
+}
