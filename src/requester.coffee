@@ -9,6 +9,10 @@
 # .on('error', (e) -> console.log("Got error: " + e.message))
 
 client = require('restler')
-options = { headers: {'X-Token':'abFLe93929452QkT9r903PsA', 'Accept':"application/json" }}
 
-client.get("https://cirrus.app47.com/api/apps", options).on('complete', (data) -> console.log data)
+token = process.env.TOKEN
+host = process.env.HOST || 'https://cirrus.app47.com'
+
+options = { headers: {'X-Token':token, 'Accept':"application/json" }}
+
+client.get("#{host}/api/external_apps", options).on 'complete', (data) -> console.log data
